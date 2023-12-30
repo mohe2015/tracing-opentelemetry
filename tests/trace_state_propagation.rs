@@ -1,12 +1,12 @@
 use futures_util::future::BoxFuture;
 use opentelemetry::{
-    propagation::TextMapPropagator,
+    propagation::{TextMapPropagator, TextMapCompositePropagator},
     trace::{SpanContext, TraceContextExt, Tracer as _, TracerProvider as _},
     Context,
 };
 use opentelemetry_sdk::{
     export::trace::{ExportResult, SpanData, SpanExporter},
-    propagation::{BaggagePropagator, TextMapCompositePropagator, TraceContextPropagator},
+    propagation::{BaggagePropagator, TraceContextPropagator},
     trace::{Tracer, TracerProvider},
 };
 use std::collections::{HashMap, HashSet};
